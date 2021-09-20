@@ -3,6 +3,8 @@
  * Render
  *
  */
+import {STORE} from './store.js'
+
 function renderNote(note, isTrashed) {
     let footer = `<footer>
       <div class="tooltip">
@@ -123,4 +125,12 @@ function renderNote(note, isTrashed) {
     }
     const container = document.querySelector(".js-content");
     container.innerHTML = html;
+  }
+
+  export {
+    renderNote,
+    renderNotes,
+    renderTrashNotes,
+    setSelectedAsideItem,
+    renderContent
   }
