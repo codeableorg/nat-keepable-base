@@ -1,19 +1,5 @@
 
-//import {STORE} from './store.js'
-/*
- *
- * Render
- *
- */
-import {
-  renderContent
-} from './render.js'
-
-/*
- *
- * Listeners
- *
- */
+import renderContent from './render.js'
 
 import {
   addContentDeleteListeners,
@@ -21,15 +7,11 @@ import {
   addContentTrashListeners,
   addContentTooltipListeners,
   addFormTooltipListener,
-  listenNoteFormSubmit,
-  listenAsideClick
-} from './listeners.js'
+  listenNoteFormSubmit
+} from './components/buttons.js'
 
-/*
- *
- * Main Functions
- *
- */
+import {listenAsideClick} from './components/navbar.js'
+
 function addEventListeners() {
   addContentDeleteListeners();
   addContentRestoreListeners();
@@ -40,9 +22,7 @@ function addEventListeners() {
   listenAsideClick();
 }
 
-function init() {
+(function () {
   renderContent();
   addEventListeners();
-}
-
-init();
+})()
